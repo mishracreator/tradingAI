@@ -3,7 +3,7 @@ import finnhub
 
 app = Flask(__name__)
 
-api_key = "d6a4ot1r01qsjlb9nsi0d6a4ot1r01qsjlb9nsig"   # <-- PUT YOUR REAL API KEY HERE
+api_key = "d6a4ot1r01qsjlb9nsi0d6a4ot1r01qsjlb9nsig"
 client = finnhub.Client(api_key=api_key)
 
 symbols = [
@@ -60,10 +60,13 @@ def calculate_signal(symbol):
             "bias": "ERROR"
         }
 
+# 🔥 Simple health check route (Railway needs this)
 @app.route("/")
 def home():
-    return "Trading AI is running 🚀"
+    return "OK"
 
+# 🔥 Dashboard route
+@app.route("/dashboard")
 def dashboard():
     results = [calculate_signal(symbol) for symbol in symbols]
 
@@ -116,11 +119,3 @@ def dashboard():
     """
 
     return render_template_string(html, results=results)
-
-if __name__ == "__main__":
-    import os
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port)
-
