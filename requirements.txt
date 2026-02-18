@@ -9,12 +9,14 @@ curl_cffi==0.13.0
 finnhub-python==2.4.27
 Flask==3.1.2
 frozendict==2.4.7
+gunicorn==25.1.0
 idna==3.11
 itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
 multitasking==0.0.12
 numpy==2.4.2
+packaging==26.0
 pandas==3.0.1
 peewee==3.19.0
 platformdirs==4.9.2

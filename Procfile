@@ -1,1 +1,2 @@
-web: python finnhub_live.py
+web: gunicorn finnhub_live:app
+
