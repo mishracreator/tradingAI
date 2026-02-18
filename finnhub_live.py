@@ -2,6 +2,9 @@ from flask import Flask, render_template_string
 import finnhub
 
 app = Flask(__name__)
+@app.route("/")
+def home():
+    return "OK"
 
 api_key = "d6a4ot1r01qsjlb9nsi0d6a4ot1r01qsjlb9nsig"   # <-- PUT YOUR REAL API KEY HERE
 client = finnhub.Client(api_key=api_key)
