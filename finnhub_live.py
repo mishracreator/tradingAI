@@ -61,6 +61,9 @@ def calculate_signal(symbol):
         }
 
 @app.route("/")
+def home():
+    return "Trading AI is running 🚀"
+
 def dashboard():
     results = [calculate_signal(symbol) for symbol in symbols]
 
